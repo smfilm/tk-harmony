@@ -104,7 +104,6 @@ class Application(QTcpSocketClient):
     def extract_thumbnail(self, filename):
         result = self.send_and_receive_command("EXTRACT_THUMBNAIL", path=filename)
         return result
-
     # file management
     def new_file(self, app, context):
         import sgtk.platform
