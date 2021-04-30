@@ -39,3 +39,4 @@ pip-log.txt
 .DS_Store
 
 *.*~
+/resources/templates/startup/elements/Shotgun_Banner/
