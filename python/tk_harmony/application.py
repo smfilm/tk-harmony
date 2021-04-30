@@ -153,7 +153,7 @@ class Application(QTcpSocketClient):
         version_is_used = "version" in work_template.keys
 
         if name_is_used:
-            fields["name"] = "scene"
+            fields["name"] = "" # smf fix
         if ext_is_used:
             fields["extension"] = "xstage"
 
@@ -167,6 +167,7 @@ class Application(QTcpSocketClient):
             while True:
                 fields["version"] = version
                 destination_path = work_template.apply_fields(fields)
+                destination_path = destination_path.replace('__', '_') # smf fix
                 if not os.path.exists(destination_path):
                     break
                 version += 1
